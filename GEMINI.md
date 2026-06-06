@@ -15,13 +15,13 @@ Build an step by step tutorial to understand & learn all Oracle excution plan co
 - `/test/`: All tools, configurations & test cases
 - `/build/`: Only temporary place for compilation, may be cached by Github
 
-# `CONCEPT.md` handling
+# `*CONCEPT.md` handling
 - The `CONCEPT.md` add the business and use cases to the top Goal this file.
 - It contains an architecture with top-level functional components and their business interfaces.
 - It does not contain all precise implementation choices.
 - Every major choice is first drawn out as three alternatives, the best one is chosen and the ohter, discarded ones kept in summary in the last chapter of the concept.
 
-# `DESIGN.md`: 
+# `*DESIGN.md`: 
 - The `DESIGN.md` derives all necessary technological choices from `CONCEPT.md`.
 - It does contain precise implementation choices.
 - Every major choice is first drawn out as three alternatives, the best one is chosen and the ohter, discarded ones kept in summary in the last chapter of the concept.
@@ -47,7 +47,7 @@ Build an step by step tutorial to understand & learn all Oracle excution plan co
 ## GUI / UI
 - Create screenshots of each UI step tested and store it as asset of the Action Workflow for review
 
-# `ROADMAP.md` handling
+# `*ROADMAP.md` handling
 - The `ROADMAP.md` is the final plan to implement the `CONCEPT.md` and `DESIGN.md` to achive the top goal
 - Define the steps in a way to allow for parallelization by defining interfaces only first and implementing functions later.
 - The `ROADMAP.md` file is structured into several key sections:
