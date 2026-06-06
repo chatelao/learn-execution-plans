@@ -1,6 +1,6 @@
 # Hash Setop Intersect
 
-![Hash Setop Intersect](../../imges/pgadmin/ex_hash_setop_intersect.svg)
+![Hash Setop Intersect](../../../imges/pgadmin/ex_hash_setop_intersect.svg)
 
 | Example SQL |
 | :--- |

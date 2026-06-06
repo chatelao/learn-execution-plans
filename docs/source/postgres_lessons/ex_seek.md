@@ -1,6 +1,6 @@
 # Seek
 
-![Seek](../../imges/pgadmin/ex_seek.svg)
+![Seek](../../../imges/pgadmin/ex_seek.svg)
 
 | Example SQL |
 | :--- |

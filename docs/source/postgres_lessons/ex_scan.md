@@ -1,6 +1,6 @@
 # Scan
 
-![Scan](../../imges/pgadmin/ex_scan.svg)
+![Scan](../../../imges/pgadmin/ex_scan.svg)
 
 | Example SQL |
 | :--- |

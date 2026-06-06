@@ -1,6 +1,6 @@
 # Index Only Scan
 
-![Index Only Scan](../../imges/pgadmin/ex_index_only_scan.svg)
+![Index Only Scan](../../../imges/pgadmin/ex_index_only_scan.svg)
 
 | Example SQL |
 | :--- |

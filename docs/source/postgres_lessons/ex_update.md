@@ -1,6 +1,6 @@
 # Update
 
-![Update](../../imges/pgadmin/ex_update.svg)
+![Update](../../../imges/pgadmin/ex_update.svg)
 
 | Example SQL |
 | :--- |

@@ -1,6 +1,6 @@
 # Recursive Union
 
-![Recursive Union](../../imges/pgadmin/ex_recursive_union.svg)
+![Recursive Union](../../../imges/pgadmin/ex_recursive_union.svg)
 
 | Example SQL |
 | :--- |

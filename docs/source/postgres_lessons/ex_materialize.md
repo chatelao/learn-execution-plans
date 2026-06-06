@@ -1,6 +1,6 @@
 # Materialize
 
-![Materialize](../../imges/pgadmin/ex_materialize.svg)
+![Materialize](../../../imges/pgadmin/ex_materialize.svg)
 
 | Example SQL |
 | :--- |

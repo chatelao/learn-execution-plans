@@ -1,6 +1,6 @@
 # Values Scan
 
-![Values Scan](../../imges/pgadmin/ex_values_scan.svg)
+![Values Scan](../../../imges/pgadmin/ex_values_scan.svg)
 
 | Example SQL |
 | :--- |

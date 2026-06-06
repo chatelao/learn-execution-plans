@@ -1,6 +1,6 @@
 # Unique
 
-![Unique](../../imges/pgadmin/ex_unique.svg)
+![Unique](../../../imges/pgadmin/ex_unique.svg)
 
 | Example SQL |
 | :--- |

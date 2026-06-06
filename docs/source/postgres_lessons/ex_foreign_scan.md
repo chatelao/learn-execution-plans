@@ -1,6 +1,6 @@
 # Foreign Scan
 
-![Foreign Scan](../../imges/pgadmin/ex_foreign_scan.svg)
+![Foreign Scan](../../../imges/pgadmin/ex_foreign_scan.svg)
 
 | Example SQL |
 | :--- |

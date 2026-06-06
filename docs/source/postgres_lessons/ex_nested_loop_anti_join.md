@@ -1,6 +1,6 @@
 # Nested Loop Anti Join
 
-![Nested Loop Anti Join](../../imges/pgadmin/ex_nested_loop_anti_join.svg)
+![Nested Loop Anti Join](../../../imges/pgadmin/ex_nested_loop_anti_join.svg)
 
 | Example SQL |
 | :--- |

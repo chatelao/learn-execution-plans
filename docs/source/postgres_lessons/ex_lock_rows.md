@@ -1,6 +1,6 @@
 # Lock Rows
 
-![Lock Rows](../../imges/pgadmin/ex_lock_rows.svg)
+![Lock Rows](../../../imges/pgadmin/ex_lock_rows.svg)
 
 | Example SQL |
 | :--- |

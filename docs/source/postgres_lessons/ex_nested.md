@@ -1,6 +1,6 @@
 # Nested
 
-![Nested](../../imges/pgadmin/ex_nested.svg)
+![Nested](../../../imges/pgadmin/ex_nested.svg)
 
 | Example SQL |
 | :--- |

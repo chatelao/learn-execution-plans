@@ -1,6 +1,6 @@
 # Table Func Scan
 
-![Table Func Scan](../../imges/pgadmin/ex_table_func_scan.svg)
+![Table Func Scan](../../../imges/pgadmin/ex_table_func_scan.svg)
 
 | Example SQL |
 | :--- |

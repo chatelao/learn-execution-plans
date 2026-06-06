@@ -1,6 +1,6 @@
 # Sort
 
-![Sort](../../imges/pgadmin/ex_sort.svg)
+![Sort](../../../imges/pgadmin/ex_sort.svg)
 
 | Example SQL |
 | :--- |
