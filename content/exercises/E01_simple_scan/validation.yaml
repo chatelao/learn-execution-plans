@@ -1,0 +1,8 @@
+expected_constructs:
+  - operation: "TABLE ACCESS"
+    options: "FULL"
+forbidden_constructs:
+  - operation: "INDEX"
+custom_rules:
+  min_cost: 0
+  max_rows: 100
