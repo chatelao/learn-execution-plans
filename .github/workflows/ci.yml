@@ -34,5 +34,7 @@ jobs:
         ./test/install.sh
 
     - name: Run tests
+      env:
+        PYTHONPATH: src
       run: |
         pytest
