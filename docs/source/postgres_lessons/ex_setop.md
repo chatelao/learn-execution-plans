@@ -1,6 +1,6 @@
 # Setop
 
-![Setop](../../imges/pgadmin/ex_setop.svg)
+![Setop](../../../imges/pgadmin/ex_setop.svg)
 
 | Example SQL |
 | :--- |

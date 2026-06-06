@@ -1,6 +1,6 @@
 # Tid Scan
 
-![Tid Scan](../../imges/pgadmin/ex_tid_scan.svg)
+![Tid Scan](../../../imges/pgadmin/ex_tid_scan.svg)
 
 | Example SQL |
 | :--- |

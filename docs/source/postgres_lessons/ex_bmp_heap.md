@@ -1,6 +1,6 @@
 # Bmp Heap
 
-![Bmp Heap](../../imges/pgadmin/ex_bmp_heap.svg)
+![Bmp Heap](../../../imges/pgadmin/ex_bmp_heap.svg)
 
 | Example SQL |
 | :--- |

@@ -1,6 +1,6 @@
 # Limit
 
-![Limit](../../imges/pgadmin/ex_limit.svg)
+![Limit](../../../imges/pgadmin/ex_limit.svg)
 
 | Example SQL |
 | :--- |

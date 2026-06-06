@@ -1,6 +1,6 @@
 # Merge Anti Join
 
-![Merge Anti Join](../../imges/pgadmin/ex_merge_anti_join.svg)
+![Merge Anti Join](../../../imges/pgadmin/ex_merge_anti_join.svg)
 
 | Example SQL |
 | :--- |

@@ -1,6 +1,6 @@
 # Append
 
-![Append](../../imges/pgadmin/ex_append.svg)
+![Append](../../../imges/pgadmin/ex_append.svg)
 
 | Example SQL |
 | :--- |

@@ -1,6 +1,6 @@
 # Group
 
-![Group](../../imges/pgadmin/ex_group.svg)
+![Group](../../../imges/pgadmin/ex_group.svg)
 
 | Example SQL |
 | :--- |

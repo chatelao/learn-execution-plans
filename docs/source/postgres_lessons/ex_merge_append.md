@@ -1,6 +1,6 @@
 # Merge Append
 
-![Merge Append](../../imges/pgadmin/ex_merge_append.svg)
+![Merge Append](../../../imges/pgadmin/ex_merge_append.svg)
 
 | Example SQL |
 | :--- |

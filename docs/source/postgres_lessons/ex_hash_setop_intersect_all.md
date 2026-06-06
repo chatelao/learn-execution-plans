@@ -1,6 +1,6 @@
 # Hash Setop Intersect All
 
-![Hash Setop Intersect All](../../imges/pgadmin/ex_hash_setop_intersect_all.svg)
+![Hash Setop Intersect All](../../../imges/pgadmin/ex_hash_setop_intersect_all.svg)
 
 | Example SQL |
 | :--- |

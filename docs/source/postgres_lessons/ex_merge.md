@@ -1,6 +1,6 @@
 # Merge
 
-![Merge](../../imges/pgadmin/ex_merge.svg)
+![Merge](../../../imges/pgadmin/ex_merge.svg)
 
 | Example SQL |
 | :--- |

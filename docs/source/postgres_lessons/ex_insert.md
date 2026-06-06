@@ -1,6 +1,6 @@
 # Insert
 
-![Insert](../../imges/pgadmin/ex_insert.svg)
+![Insert](../../../imges/pgadmin/ex_insert.svg)
 
 | Example SQL |
 | :--- |

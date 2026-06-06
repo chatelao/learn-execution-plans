@@ -1,6 +1,6 @@
 # Hash Anti Join
 
-![Hash Anti Join](../../imges/pgadmin/ex_hash_anti_join.svg)
+![Hash Anti Join](../../../imges/pgadmin/ex_hash_anti_join.svg)
 
 | Example SQL |
 | :--- |

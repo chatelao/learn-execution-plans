@@ -1,6 +1,6 @@
 # Merge Semi Join
 
-![Merge Semi Join](../../imges/pgadmin/ex_merge_semi_join.svg)
+![Merge Semi Join](../../../imges/pgadmin/ex_merge_semi_join.svg)
 
 | Example SQL |
 | :--- |

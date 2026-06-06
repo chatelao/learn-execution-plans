@@ -1,6 +1,6 @@
 # Gather Merge
 
-![Gather Merge](../../imges/pgadmin/ex_gather_merge.svg)
+![Gather Merge](../../../imges/pgadmin/ex_gather_merge.svg)
 
 | Example SQL |
 | :--- |

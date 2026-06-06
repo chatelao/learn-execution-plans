@@ -1,6 +1,6 @@
 # Redistribute Motion
 
-![Redistribute Motion](../../imges/pgadmin/ex_redistribute_motion.svg)
+![Redistribute Motion](../../../imges/pgadmin/ex_redistribute_motion.svg)
 
 | Example SQL |
 | :--- |

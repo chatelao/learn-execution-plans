@@ -1,6 +1,6 @@
 # Bmp Index
 
-![Bmp Index](../../imges/pgadmin/ex_bmp_index.svg)
+![Bmp Index](../../../imges/pgadmin/ex_bmp_index.svg)
 
 | Example SQL |
 | :--- |

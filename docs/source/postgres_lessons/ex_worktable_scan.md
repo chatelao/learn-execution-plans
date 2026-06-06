@@ -1,6 +1,6 @@
 # Worktable Scan
 
-![Worktable Scan](../../imges/pgadmin/ex_worktable_scan.svg)
+![Worktable Scan](../../../imges/pgadmin/ex_worktable_scan.svg)
 
 | Example SQL |
 | :--- |

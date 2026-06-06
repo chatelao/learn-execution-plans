@@ -1,6 +1,6 @@
 # Delete
 
-![Delete](../../imges/pgadmin/ex_delete.svg)
+![Delete](../../../imges/pgadmin/ex_delete.svg)
 
 | Example SQL |
 | :--- |

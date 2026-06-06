@@ -1,6 +1,6 @@
 # Result
 
-![Result](../../imges/pgadmin/ex_result.svg)
+![Result](../../../imges/pgadmin/ex_result.svg)
 
 | Example SQL |
 | :--- |

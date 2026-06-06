@@ -1,6 +1,6 @@
 # Join
 
-![Join](../../imges/pgadmin/ex_join.svg)
+![Join](../../../imges/pgadmin/ex_join.svg)
 
 | Example SQL |
 | :--- |

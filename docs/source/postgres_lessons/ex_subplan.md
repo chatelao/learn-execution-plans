@@ -1,6 +1,6 @@
 # Subplan
 
-![Subplan](../../imges/pgadmin/ex_subplan.svg)
+![Subplan](../../../imges/pgadmin/ex_subplan.svg)
 
 | Example SQL |
 | :--- |

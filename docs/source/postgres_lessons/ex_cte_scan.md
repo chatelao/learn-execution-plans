@@ -1,6 +1,6 @@
 # Cte Scan
 
-![Cte Scan](../../imges/pgadmin/ex_cte_scan.svg)
+![Cte Scan](../../../imges/pgadmin/ex_cte_scan.svg)
 
 | Example SQL |
 | :--- |

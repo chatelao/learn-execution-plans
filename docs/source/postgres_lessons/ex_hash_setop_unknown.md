@@ -1,6 +1,6 @@
 # Hash Setop Unknown
 
-![Hash Setop Unknown](../../imges/pgadmin/ex_hash_setop_unknown.svg)
+![Hash Setop Unknown](../../../imges/pgadmin/ex_hash_setop_unknown.svg)
 
 | Example SQL |
 | :--- |

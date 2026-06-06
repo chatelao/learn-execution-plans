@@ -1,6 +1,6 @@
 # Citus
 
-![Citus](../../imges/pgadmin/ex_citus.svg)
+![Citus](../../../imges/pgadmin/ex_citus.svg)
 
 | Example SQL |
 | :--- |

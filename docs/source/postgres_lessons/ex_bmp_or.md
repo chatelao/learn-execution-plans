@@ -1,6 +1,6 @@
 # Bmp Or
 
-![Bmp Or](../../imges/pgadmin/ex_bmp_or.svg)
+![Bmp Or](../../../imges/pgadmin/ex_bmp_or.svg)
 
 | Example SQL |
 | :--- |

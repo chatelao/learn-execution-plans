@@ -1,6 +1,6 @@
 # Broadcast Motion
 
-![Broadcast Motion](../../imges/pgadmin/ex_broadcast_motion.svg)
+![Broadcast Motion](../../../imges/pgadmin/ex_broadcast_motion.svg)
 
 | Example SQL |
 | :--- |

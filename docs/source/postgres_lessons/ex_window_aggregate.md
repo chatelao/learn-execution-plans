@@ -1,6 +1,6 @@
 # Window Aggregate
 
-![Window Aggregate](../../imges/pgadmin/ex_window_aggregate.svg)
+![Window Aggregate](../../../imges/pgadmin/ex_window_aggregate.svg)
 
 | Example SQL |
 | :--- |

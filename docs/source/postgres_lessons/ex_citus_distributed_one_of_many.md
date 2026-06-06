@@ -1,6 +1,6 @@
 # Citus Distributed One Of Many
 
-![Citus Distributed One Of Many](../../imges/pgadmin/ex_citus_distributed_one_of_many.svg)
+![Citus Distributed One Of Many](../../../imges/pgadmin/ex_citus_distributed_one_of_many.svg)
 
 | Example SQL |
 | :--- |

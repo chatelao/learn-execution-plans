@@ -1,6 +1,6 @@
 # Hash
 
-![Hash](../../imges/pgadmin/ex_hash.svg)
+![Hash](../../../imges/pgadmin/ex_hash.svg)
 
 | Example SQL |
 | :--- |

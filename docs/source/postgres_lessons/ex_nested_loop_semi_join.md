@@ -1,6 +1,6 @@
 # Nested Loop Semi Join
 
-![Nested Loop Semi Join](../../imges/pgadmin/ex_nested_loop_semi_join.svg)
+![Nested Loop Semi Join](../../../imges/pgadmin/ex_nested_loop_semi_join.svg)
 
 | Example SQL |
 | :--- |

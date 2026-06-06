@@ -1,6 +1,6 @@
 # Gather Motion
 
-![Gather Motion](../../imges/pgadmin/ex_gather_motion.svg)
+![Gather Motion](../../../imges/pgadmin/ex_gather_motion.svg)
 
 | Example SQL |
 | :--- |
