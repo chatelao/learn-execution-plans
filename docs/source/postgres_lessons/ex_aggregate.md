@@ -1,6 +1,6 @@
 # Aggregate
 
-![Aggregate](../../imges/pgadmin/ex_aggregate.svg)
+![Aggregate](../../../imges/pgadmin/ex_aggregate.svg)
 
 | Example SQL |
 | :--- |
