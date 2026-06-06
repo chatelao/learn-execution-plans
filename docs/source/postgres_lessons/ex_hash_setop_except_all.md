@@ -4,6 +4,4 @@
 
 | Example SQL |
 | :--- |
-| ```sql
-SELECT id FROM t1 EXCEPT ALL SELECT id FROM t2;
-``` |
+| ```sql SELECT id FROM t1 EXCEPT ALL SELECT id FROM t2;``` |

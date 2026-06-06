@@ -4,6 +4,4 @@
 
 | Example SQL |
 | :--- |
-| ```sql
-UPDATE users SET name = 'Jane' WHERE id = 1;
-``` |
+| ```sql UPDATE users SET name = 'Jane' WHERE id = 1;``` |

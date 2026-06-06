@@ -4,6 +4,4 @@
 
 | Example SQL |
 | :--- |
-| ```sql
-SELECT DISTINCT name FROM users;
-``` |
+| ```sql SELECT DISTINCT name FROM users;``` |

@@ -4,6 +4,4 @@
 
 | Example SQL |
 | :--- |
-| ```sql
-SELECT name, SUM(salary) OVER (PARTITION BY dept) FROM employees;
-``` |
+| ```sql SELECT name, SUM(salary) OVER (PARTITION BY dept) FROM employees;``` |

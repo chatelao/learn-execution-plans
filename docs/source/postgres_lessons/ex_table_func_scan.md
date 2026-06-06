@@ -4,6 +4,4 @@
 
 | Example SQL |
 | :--- |
-| ```sql
-SELECT * FROM json_to_recordset('[{"a":1,"b":"foo"}]') as x(a int, b text);
-``` |
+| ```sql SELECT * FROM json_to_recordset('[{"a":1,"b":"foo"}]') as x(a int, b text);``` |

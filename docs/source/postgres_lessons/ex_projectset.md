@@ -4,6 +4,4 @@
 
 | Example SQL |
 | :--- |
-| ```sql
-SELECT generate_series(1,10);
-``` |
+| ```sql SELECT generate_series(1,10);``` |

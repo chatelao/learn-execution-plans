@@ -4,6 +4,4 @@
 
 | Example SQL |
 | :--- |
-| ```sql
--- Unknown plan node
-``` |
+| ```sql -- Unknown plan node``` |

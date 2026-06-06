@@ -4,6 +4,4 @@
 
 | Example SQL |
 | :--- |
-| ```sql
--- Internal PostgreSQL node, often used in PL/pgSQL functions
-``` |
+| ```sql -- Internal PostgreSQL node, often used in PL/pgSQL functions``` |

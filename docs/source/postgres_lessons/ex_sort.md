@@ -4,6 +4,4 @@
 
 | Example SQL |
 | :--- |
-| ```sql
-SELECT * FROM users ORDER BY name;
-``` |
+| ```sql SELECT * FROM users ORDER BY name;``` |

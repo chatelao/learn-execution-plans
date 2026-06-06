@@ -4,6 +4,4 @@
 
 | Example SQL |
 | :--- |
-| ```sql
--- Greenplum/Citus data movement
-``` |
+| ```sql -- Greenplum/Citus data movement``` |

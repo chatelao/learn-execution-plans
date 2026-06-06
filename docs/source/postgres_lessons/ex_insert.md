@@ -4,6 +4,4 @@
 
 | Example SQL |
 | :--- |
-| ```sql
-INSERT INTO users (name) VALUES ('John');
-``` |
+| ```sql INSERT INTO users (name) VALUES ('John');``` |

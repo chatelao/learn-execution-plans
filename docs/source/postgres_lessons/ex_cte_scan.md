@@ -4,6 +4,4 @@
 
 | Example SQL |
 | :--- |
-| ```sql
-WITH regional_sales AS (SELECT region, SUM(amount) AS total_sales FROM orders GROUP BY region) SELECT * FROM regional_sales;
-``` |
+| ```sql WITH regional_sales AS (SELECT region, SUM(amount) AS total_sales FROM orders GROUP BY region) SELECT * FROM regional_sales;``` |

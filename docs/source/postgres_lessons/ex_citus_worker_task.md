@@ -4,6 +4,4 @@
 
 | Example SQL |
 | :--- |
-| ```sql
--- Citus internal task execution
-``` |
+| ```sql -- Citus internal task execution``` |

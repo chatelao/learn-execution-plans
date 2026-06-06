@@ -4,6 +4,4 @@
 
 | Example SQL |
 | :--- |
-| ```sql
-SELECT department, COUNT(*) FROM employees GROUP BY department;
-``` |
+| ```sql SELECT department, COUNT(*) FROM employees GROUP BY department;``` |

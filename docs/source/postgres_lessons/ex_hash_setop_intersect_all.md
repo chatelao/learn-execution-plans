@@ -4,6 +4,4 @@
 
 | Example SQL |
 | :--- |
-| ```sql
-SELECT id FROM t1 INTERSECT ALL SELECT id FROM t2;
-``` |
+| ```sql SELECT id FROM t1 INTERSECT ALL SELECT id FROM t2;``` |

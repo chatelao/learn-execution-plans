@@ -4,6 +4,4 @@
 
 | Example SQL |
 | :--- |
-| ```sql
-SELECT * FROM distributed_table;
-``` |
+| ```sql SELECT * FROM distributed_table;``` |

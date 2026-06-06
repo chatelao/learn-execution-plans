@@ -4,6 +4,4 @@
 
 | Example SQL |
 | :--- |
-| ```sql
-VALUES (1, 'one'), (2, 'two');
-``` |
+| ```sql VALUES (1, 'one'), (2, 'two');``` |

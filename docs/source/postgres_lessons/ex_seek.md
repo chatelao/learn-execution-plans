@@ -4,6 +4,4 @@
 
 | Example SQL |
 | :--- |
-| ```sql
-SELECT * FROM users WHERE id = 1; -- Often synonymous with Index Scan in some dialects
-``` |
+| ```sql SELECT * FROM users WHERE id = 1; -- Often synonymous with Index Scan in some dialects``` |

@@ -4,6 +4,4 @@
 
 | Example SQL |
 | :--- |
-| ```sql
-DELETE FROM users WHERE id = 1;
-``` |
+| ```sql DELETE FROM users WHERE id = 1;``` |

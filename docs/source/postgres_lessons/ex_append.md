@@ -4,6 +4,4 @@
 
 | Example SQL |
 | :--- |
-| ```sql
-SELECT * FROM t1 UNION ALL SELECT * FROM t2;
-``` |
+| ```sql SELECT * FROM t1 UNION ALL SELECT * FROM t2;``` |

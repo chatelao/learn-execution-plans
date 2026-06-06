@@ -4,6 +4,4 @@
 
 | Example SQL |
 | :--- |
-| ```sql
-SELECT * FROM users u WHERE u.id NOT IN (SELECT user_id FROM orders);
-``` |
+| ```sql SELECT * FROM users u WHERE u.id NOT IN (SELECT user_id FROM orders);``` |

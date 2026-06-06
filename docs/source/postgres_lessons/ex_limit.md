@@ -4,6 +4,4 @@
 
 | Example SQL |
 | :--- |
-| ```sql
-SELECT * FROM users LIMIT 10;
-``` |
+| ```sql SELECT * FROM users LIMIT 10;``` |

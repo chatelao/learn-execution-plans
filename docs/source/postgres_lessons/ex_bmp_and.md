@@ -4,6 +4,4 @@
 
 | Example SQL |
 | :--- |
-| ```sql
-SELECT * FROM users WHERE id > 10 AND age > 20;
-``` |
+| ```sql SELECT * FROM users WHERE id > 10 AND age > 20;``` |
