@@ -11,7 +11,7 @@
 | Phase 5 | Content Management & Lesson Engine | ⏳ |
 | Phase 6 | Exercise Validator (EV) | ⏳ |
 | Phase 7 | Web UI Development | ⏳ |
-| Phase 8 | Content Production | ⏳ |
+| Phase 8 | Content Production | 🚧 |
 
 ## Goals
 
@@ -69,63 +69,63 @@
 
 ### Phase 8: Content Production
 - [ ] Produce Oracle execution plan constructs lessons ⏳
-- [ ] Produce PostgreSQL execution plan constructs lessons ⏳
-  - [ ] Lesson: Scan (ex_scan.svg) ⏳
-  - [ ] Lesson: Index Scan (ex_index_scan.svg) ⏳
-  - [ ] Lesson: Index Only Scan (ex_index_only_scan.svg) ⏳
-  - [ ] Lesson: Nested (ex_nested.svg) ⏳
-  - [ ] Lesson: Join (ex_join.svg) ⏳
-  - [ ] Lesson: Hash (ex_hash.svg) ⏳
-  - [ ] Lesson: Merge (ex_merge.svg) ⏳
-  - [ ] Lesson: Bmp Index (ex_bmp_index.svg) ⏳
-  - [ ] Lesson: Bmp Heap (ex_bmp_heap.svg) ⏳
-  - [ ] Lesson: Bmp And (ex_bmp_and.svg) ⏳
-  - [ ] Lesson: Bmp Or (ex_bmp_or.svg) ⏳
-  - [ ] Lesson: Sort (ex_sort.svg) ⏳
-  - [ ] Lesson: Aggregate (ex_aggregate.svg) ⏳
-  - [ ] Lesson: Group (ex_group.svg) ⏳
-  - [ ] Lesson: Unique (ex_unique.svg) ⏳
-  - [ ] Lesson: Limit (ex_limit.svg) ⏳
-  - [ ] Lesson: Insert (ex_insert.svg) ⏳
-  - [ ] Lesson: Update (ex_update.svg) ⏳
-  - [ ] Lesson: Delete (ex_delete.svg) ⏳
-  - [ ] Lesson: Lock Rows (ex_lock_rows.svg) ⏳
-  - [ ] Lesson: Materialize (ex_materialize.svg) ⏳
-  - [ ] Lesson: Result (ex_result.svg) ⏳
-  - [ ] Lesson: Cte Scan (ex_cte_scan.svg) ⏳
-  - [ ] Lesson: Worktable Scan (ex_worktable_scan.svg) ⏳
-  - [ ] Lesson: Subplan (ex_subplan.svg) ⏳
-  - [ ] Lesson: Append (ex_append.svg) ⏳
-  - [ ] Lesson: Merge Append (ex_merge_append.svg) ⏳
-  - [ ] Lesson: Recursive Union (ex_recursive_union.svg) ⏳
-  - [ ] Lesson: Nested Loop Semi Join (ex_nested_loop_semi_join.svg) ⏳
-  - [ ] Lesson: Nested Loop Anti Join (ex_nested_loop_anti_join.svg) ⏳
-  - [ ] Lesson: Hash Semi Join (ex_hash_semi_join.svg) ⏳
-  - [ ] Lesson: Hash Anti Join (ex_hash_anti_join.svg) ⏳
-  - [ ] Lesson: Merge Semi Join (ex_merge_semi_join.svg) ⏳
-  - [ ] Lesson: Merge Anti Join (ex_merge_anti_join.svg) ⏳
-  - [ ] Lesson: Gather Merge (ex_gather_merge.svg) ⏳
-  - [ ] Lesson: Gather Motion (ex_gather_motion.svg) ⏳
-  - [ ] Lesson: Window Aggregate (ex_window_aggregate.svg) ⏳
-  - [ ] Lesson: Projectset (ex_projectset.svg) ⏳
-  - [ ] Lesson: Foreign Scan (ex_foreign_scan.svg) ⏳
-  - [ ] Lesson: Tid Scan (ex_tid_scan.svg) ⏳
-  - [ ] Lesson: Values Scan (ex_values_scan.svg) ⏳
-  - [ ] Lesson: Named Tuplestore Scan (ex_named_tuplestore_scan.svg) ⏳
-  - [ ] Lesson: Table Func Scan (ex_table_func_scan.svg) ⏳
-  - [ ] Lesson: Seek (ex_seek.svg) ⏳
-  - [ ] Lesson: Setop (ex_setop.svg) ⏳
-  - [ ] Lesson: Hash Setop Unknown (ex_hash_setop_unknown.svg) ⏳
-  - [ ] Lesson: Hash Setop Except (ex_hash_setop_except.svg) ⏳
-  - [ ] Lesson: Hash Setop Except All (ex_hash_setop_except_all.svg) ⏳
-  - [ ] Lesson: Hash Setop Intersect (ex_hash_setop_intersect.svg) ⏳
-  - [ ] Lesson: Hash Setop Intersect All (ex_hash_setop_intersect_all.svg) ⏳
-  - [ ] Lesson: Citus (ex_citus.svg) ⏳
-  - [ ] Lesson: Citus Worker Task (ex_citus_worker_task.svg) ⏳
-  - [ ] Lesson: Citus Distributed One Of One (ex_citus_distributed_one_of_one.svg) ⏳
-  - [ ] Lesson: Citus Distributed One Of Many (ex_citus_distributed_one_of_many.svg) ⏳
-  - [ ] Lesson: Broadcast Motion (ex_broadcast_motion.svg) ⏳
-  - [ ] Lesson: Redistribute Motion (ex_redistribute_motion.svg) ⏳
-  - [ ] Lesson: Unknown (ex_unknown.svg) ⏳
+- [x] Produce PostgreSQL execution plan constructs lessons ✅ (2026-06-06)
+  - [x] Lesson: Scan (ex_scan.svg) ✅ (2026-06-06)
+  - [x] Lesson: Index Scan (ex_index_scan.svg) ✅ (2026-06-06)
+  - [x] Lesson: Index Only Scan (ex_index_only_scan.svg) ✅ (2026-06-06)
+  - [x] Lesson: Nested (ex_nested.svg) ✅ (2026-06-06)
+  - [x] Lesson: Join (ex_join.svg) ✅ (2026-06-06)
+  - [x] Lesson: Hash (ex_hash.svg) ✅ (2026-06-06)
+  - [x] Lesson: Merge (ex_merge.svg) ✅ (2026-06-06)
+  - [x] Lesson: Bmp Index (ex_bmp_index.svg) ✅ (2026-06-06)
+  - [x] Lesson: Bmp Heap (ex_bmp_heap.svg) ✅ (2026-06-06)
+  - [x] Lesson: Bmp And (ex_bmp_and.svg) ✅ (2026-06-06)
+  - [x] Lesson: Bmp Or (ex_bmp_or.svg) ✅ (2026-06-06)
+  - [x] Lesson: Sort (ex_sort.svg) ✅ (2026-06-06)
+  - [x] Lesson: Aggregate (ex_aggregate.svg) ✅ (2026-06-06)
+  - [x] Lesson: Group (ex_group.svg) ✅ (2026-06-06)
+  - [x] Lesson: Unique (ex_unique.svg) ✅ (2026-06-06)
+  - [x] Lesson: Limit (ex_limit.svg) ✅ (2026-06-06)
+  - [x] Lesson: Insert (ex_insert.svg) ✅ (2026-06-06)
+  - [x] Lesson: Update (ex_update.svg) ✅ (2026-06-06)
+  - [x] Lesson: Delete (ex_delete.svg) ✅ (2026-06-06)
+  - [x] Lesson: Lock Rows (ex_lock_rows.svg) ✅ (2026-06-06)
+  - [x] Lesson: Materialize (ex_materialize.svg) ✅ (2026-06-06)
+  - [x] Lesson: Result (ex_result.svg) ✅ (2026-06-06)
+  - [x] Lesson: Cte Scan (ex_cte_scan.svg) ✅ (2026-06-06)
+  - [x] Lesson: Worktable Scan (ex_worktable_scan.svg) ✅ (2026-06-06)
+  - [x] Lesson: Subplan (ex_subplan.svg) ✅ (2026-06-06)
+  - [x] Lesson: Append (ex_append.svg) ✅ (2026-06-06)
+  - [x] Lesson: Merge Append (ex_merge_append.svg) ✅ (2026-06-06)
+  - [x] Lesson: Recursive Union (ex_recursive_union.svg) ✅ (2026-06-06)
+  - [x] Lesson: Nested Loop Semi Join (ex_nested_loop_semi_join.svg) ✅ (2026-06-06)
+  - [x] Lesson: Nested Loop Anti Join (ex_nested_loop_anti_join.svg) ✅ (2026-06-06)
+  - [x] Lesson: Hash Semi Join (ex_hash_semi_join.svg) ✅ (2026-06-06)
+  - [x] Lesson: Hash Anti Join (ex_hash_anti_join.svg) ✅ (2026-06-06)
+  - [x] Lesson: Merge Semi Join (ex_merge_semi_join.svg) ✅ (2026-06-06)
+  - [x] Lesson: Merge Anti Join (ex_merge_anti_join.svg) ✅ (2026-06-06)
+  - [x] Lesson: Gather Merge (ex_gather_merge.svg) ✅ (2026-06-06)
+  - [x] Lesson: Gather Motion (ex_gather_motion.svg) ✅ (2026-06-06)
+  - [x] Lesson: Window Aggregate (ex_window_aggregate.svg) ✅ (2026-06-06)
+  - [x] Lesson: Projectset (ex_projectset.svg) ✅ (2026-06-06)
+  - [x] Lesson: Foreign Scan (ex_foreign_scan.svg) ✅ (2026-06-06)
+  - [x] Lesson: Tid Scan (ex_tid_scan.svg) ✅ (2026-06-06)
+  - [x] Lesson: Values Scan (ex_values_scan.svg) ✅ (2026-06-06)
+  - [x] Lesson: Named Tuplestore Scan (ex_named_tuplestore_scan.svg) ✅ (2026-06-06)
+  - [x] Lesson: Table Func Scan (ex_table_func_scan.svg) ✅ (2026-06-06)
+  - [x] Lesson: Seek (ex_seek.svg) ✅ (2026-06-06)
+  - [x] Lesson: Setop (ex_setop.svg) ✅ (2026-06-06)
+  - [x] Lesson: Hash Setop Unknown (ex_hash_setop_unknown.svg) ✅ (2026-06-06)
+  - [x] Lesson: Hash Setop Except (ex_hash_setop_except.svg) ✅ (2026-06-06)
+  - [x] Lesson: Hash Setop Except All (ex_hash_setop_except_all.svg) ✅ (2026-06-06)
+  - [x] Lesson: Hash Setop Intersect (ex_hash_setop_intersect.svg) ✅ (2026-06-06)
+  - [x] Lesson: Hash Setop Intersect All (ex_hash_setop_intersect_all.svg) ✅ (2026-06-06)
+  - [x] Lesson: Citus (ex_citus.svg) ✅ (2026-06-06)
+  - [x] Lesson: Citus Worker Task (ex_citus_worker_task.svg) ✅ (2026-06-06)
+  - [x] Lesson: Citus Distributed One Of One (ex_citus_distributed_one_of_one.svg) ✅ (2026-06-06)
+  - [x] Lesson: Citus Distributed One Of Many (ex_citus_distributed_one_of_many.svg) ✅ (2026-06-06)
+  - [x] Lesson: Broadcast Motion (ex_broadcast_motion.svg) ✅ (2026-06-06)
+  - [x] Lesson: Redistribute Motion (ex_redistribute_motion.svg) ✅ (2026-06-06)
+  - [x] Lesson: Unknown (ex_unknown.svg) ✅ (2026-06-06)
 - [ ] Create interactive optimization exercises ⏳
 - [ ] Conduct knowledge verification test suites ⏳
