@@ -1,0 +1,38 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+
+    - name: Install system dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y libpq-dev
+
+    - name: Install build dependencies
+      run: |
+        chmod +x src/install.sh
+        ./src/install.sh
+
+    - name: Install test dependencies
+      run: |
+        chmod +x test/install.sh
+        ./test/install.sh
+
+    - name: Run tests
+      run: |
+        pytest

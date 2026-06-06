@@ -1,0 +1,7 @@
+typer
+docker
+oracledb
+psycopg2-binary
+PyYAML
+sphinx
+sphinx-rtd-theme
