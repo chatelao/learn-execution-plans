@@ -4,7 +4,7 @@
 - **Language**: Python 3.10+
 - **CLI Framework**: Typer
 - **Docker Management**: Docker SDK for Python
-- **Database Connectivity**: `cx_Oracle` (Oracle), `psycopg2` (PostgreSQL)
+- **Database Connectivity**: `oracledb` (Oracle), `psycopg2-binary` (PostgreSQL)
 - **Serialization**: PyYAML for lesson and exercise metadata
 - **Documentation**: Sphinx / ReadTheDocs
 
