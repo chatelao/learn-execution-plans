@@ -10,7 +10,7 @@
 | Phase 4 | Database Sandbox Interface (DSI) | ⏳ |
 | Phase 5 | Content Management & Lesson Engine | ⏳ |
 | Phase 6 | Exercise Validator (EV) | ⏳ |
-| Phase 7 | CLI Development | ⏳ |
+| Phase 7 | Web UI Development | ⏳ |
 | Phase 8 | Content Production | ⏳ |
 
 ## Goals
@@ -61,11 +61,11 @@
 - [ ] Implement plan tree parsing and comparison logic ⏳
 - [ ] Implement validation feedback generator ⏳
 
-### Phase 7: CLI Development
-- [ ] Implement Typer-based CLI framework ⏳
-- [ ] Create commands for lesson navigation (`list`, `start`, `next`) ⏳
-- [ ] Create commands for exercise submission (`submit`, `hint`) ⏳
-- [ ] Implement progress reporting commands ⏳
+### Phase 7: Web UI Development
+- [ ] Implement Web-based User Interface ⏳
+- [ ] Create UI for lesson navigation ⏳
+- [ ] Create UI for exercise submission ⏳
+- [ ] Implement progress dashboard ⏳
 
 ### Phase 8: Content Production
 - [ ] Produce Oracle execution plan constructs lessons ⏳

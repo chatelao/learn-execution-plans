@@ -37,9 +37,6 @@ Build an step by step tutorial to understand & learn all Oracle excution plan co
 - If there are SOAP-APIs, describe them in `api/api.wsdl`
 - Keep the api definitions up-to-date with every system change
 
-## Command-Line Interface (CLI)
-- Every option should be available as short and long form
-
 ## Database
 - If SQL statements are required, use the oldest, most common standard dialect available to improve cross-plattform compatibility.
 - Draw database schematics as plantUML entities with crowfoot notation.
