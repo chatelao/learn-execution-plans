@@ -2,7 +2,7 @@
 
 ## Technical Stack
 - **Language**: Python 3.10+
-- **CLI Framework**: Typer
+- **UI Framework**: Web-based GUI (SPA)
 - **Docker Management**: Docker SDK for Python
 - **Database Connectivity**: `oracledb` (Oracle), `psycopg2-binary` (PostgreSQL)
 - **Serialization**: PyYAML for lesson and exercise metadata
@@ -54,23 +54,23 @@ The storage for all educational material.
 ## Major Choices
 
 ### Choice 1: Implementation Language & Framework
-- **Alternative 1: Python with Typer**
-  - *Pros*: Excellent library support for database interaction and Docker; low barrier to entry for scripting; Typer provides a modern, type-hinted CLI experience.
+- **Alternative 1: Python**
+  - *Pros*: Excellent library support for database interaction and Docker; rich ecosystem for web backends and pedagogical logic.
   - *Cons*: Slower execution compared to compiled languages (negligible for this use case).
-- **Alternative 2: Node.js with oclif**
-  - *Pros*: Strong ecosystem for CLI tools; good async support.
+- **Alternative 2: Node.js with Express/NestJS**
+  - *Pros*: Strong ecosystem for web services; good async support.
   - *Cons*: Managing local Docker containers and complex DB drivers (especially Oracle) can be more cumbersome than in Python.
-- **Alternative 3: Go with Cobra**
-  - *Pros*: Fast, single-binary distribution; excellent Docker integration.
+- **Alternative 3: Go with Gin/Fiber**
+  - *Pros*: Fast, efficient for high-concurrency web services; excellent Docker integration.
   - *Cons*: Steeper learning curve for content contributors; less flexible for the rapid development of educational logic.
 
-**Chosen Alternative: Alternative 1 - Python with Typer.**
+**Chosen Alternative: Alternative 1 - Python.**
 Python's balance of readability and powerful libraries for database and system management makes it ideal for a tutorial system that may be extended by database professionals.
 
 ### Choice 2: User Interface Type
 - **Alternative 1: Command-Line Interface (CLI)**
   - *Pros*: Directly aligns with the workflow of DBAs and developers; easy to automate; minimal overhead.
-  - *Cons*: Steep learning curve for non-technical users (not our target audience).
+  - *Cons*: Steep learning curve for non-technical users.
 - **Alternative 2: Web-based GUI (SPA)**
   - *Pros*: More visual; lower barrier to entry.
   - *Cons*: Complex to manage local Docker containers from a browser (requires a local proxy or heavy backend); higher development effort.
@@ -78,8 +78,8 @@ Python's balance of readability and powerful libraries for database and system m
   - *Pros*: Integrated directly into the IDE where users write SQL.
   - *Cons*: Ties the user to a specific editor.
 
-**Chosen Alternative: Alternative 1 - Command-Line Interface (CLI).**
-A CLI tool provides the most direct and realistic experience for users aiming for professional database certification.
+**Chosen Alternative: Alternative 2 - Web-based GUI (SPA).**
+A Web-based GUI provides a more interactive, visual, and accessible experience for users learning complex execution plan constructs.
 
 ### Choice 3: Content Metadata Format
 - **Alternative 1: YAML + Markdown Files**
