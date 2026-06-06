@@ -1,0 +1,18 @@
+@startuml TOP_ARCHITECTURE
+
+package "Execution Plan Mastery Tutorial" {
+    [Lesson Engine] as LE
+    [Database Sandbox Interface] as DSI
+    [Exercise Validator] as EV
+    database "Content Repository" as CR
+}
+
+actor User
+
+User <--> DSI : "SQL Queries / Plans & Results"
+LE <--> CR : "Retrieve Lessons & Exercises"
+LE <--> DSI : "Trigger Sandbox Setup"
+EV <--> DSI : "Request Execution Plans"
+LE <--> EV : "Validation Criteria / Status"
+
+@enduml
