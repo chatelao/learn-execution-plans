@@ -77,3 +77,29 @@ def test_validation_case_insensitivity():
     criteria = ValidationCriteria(expected_constructs=[{"operation": "TABLE ACCESS", "type": "FULL"}])
     result = validator.validate("SELECT ...", criteria)
     assert result.success is True
+
+def test_validation_or_logic():
+    # Test Seq Scan (Postgres)
+    plan_pg = PlanTree(operation="Seq Scan", options={"Relation Name": "users"})
+    validator_pg = MockValidator(plan_pg)
+
+    # Test Table Access Full (Oracle)
+    plan_ora = PlanTree(operation="TABLE ACCESS", options={"type": "FULL"})
+    validator_ora = MockValidator(plan_ora)
+
+    # Criteria that accepts either
+    criteria = ValidationCriteria(expected_constructs=[
+        [{"operation": "TABLE ACCESS", "type": "FULL"}, "Seq Scan"]
+    ])
+
+    result_pg = validator_pg.validate("SELECT * FROM users", criteria)
+    assert result_pg.success is True
+
+    result_ora = validator_ora.validate("SELECT * FROM users", criteria)
+    assert result_ora.success is True
+
+    # Negative case: something else
+    plan_other = PlanTree(operation="INDEX SCAN")
+    validator_other = MockValidator(plan_other)
+    result_other = validator_other.validate("SELECT * FROM users", criteria)
+    assert result_other.success is False
