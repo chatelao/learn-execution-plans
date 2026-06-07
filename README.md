@@ -3,7 +3,7 @@
 A step-by-step tutorial for mastering Oracle and PostgreSQL execution plans to achieve certifiable knowledge.
 
 ## Documentation
-The documentation is published on ReadTheDocs: [Execution Plan Mastery Tutorial](https://execution-plan-mastery-tutorial.readthedocs.io/) (Placeholder link)
+The documentation is published on ReadTheDocs: [Execution Plan Mastery Tutorial](https://learn-execution-plans.readthedocs.io/en/latest/)
 
 ## Features
 - Interactive lessons on execution plan constructs.
