@@ -1,4 +1,5 @@
 import os
+from typing import List
 import yaml
 from abc import ABC, abstractmethod
 from .models import LessonData, ExerciseData
@@ -26,6 +27,24 @@ class ContentRepository(ABC):
 
         :param exercise_id: Unique identifier for the exercise.
         :return: ExerciseData object.
+        """
+        pass
+
+    @abstractmethod
+    def list_lessons(self) -> List[str]:
+        """
+        Returns a list of all available lesson IDs.
+
+        :return: List of lesson IDs.
+        """
+        pass
+
+    @abstractmethod
+    def list_exercises(self) -> List[str]:
+        """
+        Returns a list of all available exercise IDs.
+
+        :return: List of exercise IDs.
         """
         pass
 
@@ -81,3 +100,15 @@ class FileSystemContentRepository(ContentRepository):
             validation_rules_yaml=validation_rules_yaml,
             metadata=metadata
         )
+
+    def list_lessons(self) -> List[str]:
+        if not os.path.exists(self.lessons_path):
+            return []
+        return sorted([d for d in os.listdir(self.lessons_path)
+                      if os.path.isdir(os.path.join(self.lessons_path, d))])
+
+    def list_exercises(self) -> List[str]:
+        if not os.path.exists(self.exercises_path):
+            return []
+        return sorted([d for d in os.listdir(self.exercises_path)
+                      if os.path.isdir(os.path.join(self.exercises_path, d))])
