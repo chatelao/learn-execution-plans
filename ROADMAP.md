@@ -57,8 +57,8 @@
 
 ### Phase 6: Exercise Validator (EV)
 - [ ] Implement execution plan capture (`EXPLAIN`) for Oracle ⏳
-- [ ] Implement execution plan capture (`EXPLAIN`) for PostgreSQL ⏳
-- [ ] Implement plan tree parsing and comparison logic 🚧 (PostgreSQL parser implemented)
+- [x] Implement execution plan capture (`EXPLAIN`) for PostgreSQL ✅ (2024-05-22)
+- [x] Implement plan tree parsing and comparison logic ✅ (2024-05-22)
 - [ ] Implement validation feedback generator ⏳
 
 ### Phase 7: Web UI Development
@@ -146,5 +146,5 @@
   - [x] Lesson: Broadcast Motion (ex_broadcast_motion.svg) ✅ (2026-06-06)
   - [x] Lesson: Redistribute Motion (ex_redistribute_motion.svg) ✅ (2026-06-06)
   - [x] Lesson: Unknown (ex_unknown.svg) ✅ (2026-06-06)
-- [/] Create interactive optimization exercises 🚧 (First PostgreSQL scan lesson migrated)
+- [/] Create interactive optimization exercises 🚧 (PostgreSQL Index Scan lesson and exercise added)
 - [ ] Conduct knowledge verification test suites ⏳

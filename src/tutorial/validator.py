@@ -2,6 +2,7 @@ import json
 from abc import ABC, abstractmethod
 from typing import Any, List, Dict, Optional
 from .models import PlanTree, ValidationCriteria, ValidationResult
+from .sandbox import SandboxInterface
 
 class PostgresPlanParser:
     """
@@ -77,9 +78,10 @@ class DefaultExerciseValidator(ExerciseValidator):
         # Check for forbidden constructs
         for forbidden in criteria.forbidden_constructs:
             if self._find_construct(plan_tree, forbidden):
+                feedback = f"Forbidden construct found: {self._format_construct(forbidden)}"
                 return ValidationResult(
                     success=False,
-                    feedback=f"Forbidden construct found: {forbidden}",
+                    feedback=feedback,
                     plan_tree=plan_tree
                 )
 
@@ -87,7 +89,7 @@ class DefaultExerciseValidator(ExerciseValidator):
         missing = []
         for expected in criteria.expected_constructs:
             if not self._find_construct(plan_tree, expected):
-                missing.append(str(expected))
+                missing.append(self._format_construct(expected))
 
         if missing:
             return ValidationResult(
@@ -97,6 +99,20 @@ class DefaultExerciseValidator(ExerciseValidator):
             )
 
         return ValidationResult(success=True, feedback="Exercise validated successfully!", plan_tree=plan_tree)
+
+    def _format_construct(self, construct: Any) -> str:
+        """Formats a construct for human-readable feedback."""
+        if isinstance(construct, list):
+            return " OR ".join(self._format_construct(c) for c in construct)
+        if isinstance(construct, dict):
+            parts = []
+            if "operation" in construct:
+                parts.append(construct["operation"])
+            for k, v in construct.items():
+                if k != "operation":
+                    parts.append(f"{k}={v}")
+            return f"({' '.join(parts)})"
+        return str(construct)
 
     def _find_construct(self, tree: PlanTree, construct: Any) -> bool:
         """
@@ -152,3 +168,29 @@ class DefaultExerciseValidator(ExerciseValidator):
             return True
 
         return False
+
+class PostgresExerciseValidator(DefaultExerciseValidator):
+    """
+    Exercise Validator specifically for PostgreSQL.
+    """
+
+    def __init__(self, sandbox: SandboxInterface):
+        self.sandbox = sandbox
+        self.parser = PostgresPlanParser()
+
+    def get_execution_plan(self, sql: str) -> PlanTree:
+        explain_sql = f"EXPLAIN (FORMAT JSON) {sql.strip(';')}"
+        result = self.sandbox.execute_query(explain_sql)
+        if result.error:
+            raise ValueError(f"PostgreSQL EXPLAIN failed: {result.error}")
+
+        # PostgreSQL JSON EXPLAIN result is usually in the first column of the first row
+        if not result.rows or not result.rows[0]:
+            raise ValueError("PostgreSQL EXPLAIN returned no data")
+
+        json_output = result.rows[0][0]
+        if isinstance(json_output, dict) or isinstance(json_output, list):
+            # Already parsed if the driver/DSI does it
+            json_output = json.dumps(json_output)
+
+        return self.parser.parse(json_output)
