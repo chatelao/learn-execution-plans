@@ -2,6 +2,7 @@ import json
 from abc import ABC, abstractmethod
 from typing import Any, List, Dict, Optional
 from .models import PlanTree, ValidationCriteria, ValidationResult
+from .sandbox import SandboxInterface
 
 class PostgresPlanParser:
     """
@@ -64,9 +65,28 @@ class DefaultExerciseValidator(ExerciseValidator):
     Standard implementation of ExerciseValidator using recursive plan tree comparison.
     """
 
+    def __init__(self, sandbox: SandboxInterface):
+        self.sandbox = sandbox
+        self.pg_parser = PostgresPlanParser()
+
     def get_execution_plan(self, sql: str) -> PlanTree:
-        # This will be implemented when connected to the Database Sandbox
-        raise NotImplementedError("get_execution_plan depends on a concrete Sandbox implementation.")
+        # Currently assumes PostgreSQL. In future, can check db_type.
+        explain_sql = f"EXPLAIN (FORMAT JSON) {sql}"
+        res = self.sandbox.execute_query(explain_sql)
+
+        if res.error:
+            raise RuntimeError(f"Database error during EXPLAIN: {res.error}")
+
+        # EXPLAIN (FORMAT JSON) returns a single column with a single row containing the JSON string
+        if not res.rows or not res.rows[0]:
+            raise ValueError("No output from EXPLAIN")
+
+        json_output = res.rows[0][0]
+        # Depending on the driver/DB, json_output might be a string or a dict/list already
+        if not isinstance(json_output, str):
+            json_output = json.dumps(json_output)
+
+        return self.pg_parser.parse(json_output)
 
     def validate(self, user_sql: str, criteria: ValidationCriteria) -> ValidationResult:
         try:

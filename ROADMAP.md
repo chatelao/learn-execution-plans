@@ -7,9 +7,9 @@
 | Phase 1 | Project Foundation | ✅ |
 | Phase 2 | Infrastructure & CI/CD | ✅ |
 | Phase 3 | Technical Interface Specifications | ✅ |
-| Phase 4 | Database Sandbox Interface (DSI) | ⏳ |
+| Phase 4 | Database Sandbox Interface (DSI) | 🚧 |
 | Phase 5 | Content Management & Lesson Engine | ✅ |
-| Phase 6 | Exercise Validator (EV) | ⏳ |
+| Phase 6 | Exercise Validator (EV) | 🚧 |
 | Phase 7 | Web UI Development | ⏳ |
 | Phase 8 | Content Production | 🚧 |
 
@@ -44,10 +44,10 @@
 - [x] Define Content Repository file structure and YAML schemas ✅
 
 ### Phase 4: Database Sandbox Interface (DSI)
-- [ ] Implement Docker management using Docker SDK for Python ⏳
+- [x] Implement Docker management using Docker SDK for Python ✅ (2026-06-07)
 - [ ] Create pre-configured Docker images for Oracle ⏳
 - [ ] Create pre-configured Docker images for PostgreSQL ⏳
-- [ ] Implement SQL execution and result capture logic ⏳
+- [x] Implement SQL execution and result capture logic ✅ (2026-06-07)
 
 ### Phase 5: Content Management & Lesson Engine
 - [x] Implement `tutorial.engine` for curriculum management ✅ (2024-05-22)
@@ -57,7 +57,7 @@
 
 ### Phase 6: Exercise Validator (EV)
 - [ ] Implement execution plan capture (`EXPLAIN`) for Oracle ⏳
-- [ ] Implement execution plan capture (`EXPLAIN`) for PostgreSQL ⏳
+- [x] Implement execution plan capture (`EXPLAIN`) for PostgreSQL ✅ (2026-06-07)
 - [ ] Implement plan tree parsing and comparison logic 🚧 (PostgreSQL parser implemented)
 - [ ] Implement validation feedback generator ⏳
 
