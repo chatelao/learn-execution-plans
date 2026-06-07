@@ -59,7 +59,7 @@ class LessonEngine:
             custom_rules=rules.get("custom_rules", {})
         )
 
-        result = self.validator.validate(user_sql, criteria)
+        result = self.validator.validate(user_sql, criteria, self.sandbox)
 
         if result.success:
             self.progress_tracker.complete_exercise(exercise_id)

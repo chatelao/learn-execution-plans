@@ -32,6 +32,8 @@ class PostgresPlanParser:
 
         return PlanTree(operation=operation, children=children, options=options)
 
+from .sandbox import SandboxInterface
+
 class ExerciseValidator(ABC):
     """
     Exercise Validator (EV)
@@ -39,22 +41,24 @@ class ExerciseValidator(ABC):
     """
 
     @abstractmethod
-    def get_execution_plan(self, sql: str) -> PlanTree:
+    def get_execution_plan(self, sql: str, sandbox: SandboxInterface) -> PlanTree:
         """
         Requests DSI to run EXPLAIN on the SQL and returns a structured plan tree.
 
         :param sql: User-provided SQL statement.
+        :param sandbox: The database sandbox to use.
         :return: A structured PlanTree object.
         """
         pass
 
     @abstractmethod
-    def validate(self, user_sql: str, criteria: ValidationCriteria) -> ValidationResult:
+    def validate(self, user_sql: str, criteria: ValidationCriteria, sandbox: SandboxInterface) -> ValidationResult:
         """
         Runs validation by comparing the user's execution plan against the criteria.
 
         :param user_sql: User-provided SQL statement.
         :param criteria: Validation criteria defined in the exercise.
+        :param sandbox: The database sandbox to use.
         :return: ValidationResult with success/failure and feedback.
         """
         pass
@@ -64,13 +68,13 @@ class DefaultExerciseValidator(ExerciseValidator):
     Standard implementation of ExerciseValidator using recursive plan tree comparison.
     """
 
-    def get_execution_plan(self, sql: str) -> PlanTree:
-        # This will be implemented when connected to the Database Sandbox
-        raise NotImplementedError("get_execution_plan depends on a concrete Sandbox implementation.")
+    @abstractmethod
+    def get_execution_plan(self, sql: str, sandbox: SandboxInterface) -> PlanTree:
+        pass
 
-    def validate(self, user_sql: str, criteria: ValidationCriteria) -> ValidationResult:
+    def validate(self, user_sql: str, criteria: ValidationCriteria, sandbox: SandboxInterface) -> ValidationResult:
         try:
-            plan_tree = self.get_execution_plan(user_sql)
+            plan_tree = self.get_execution_plan(user_sql, sandbox)
         except Exception as e:
             return ValidationResult(success=False, feedback=f"Failed to capture execution plan: {str(e)}")
 
@@ -152,3 +156,29 @@ class DefaultExerciseValidator(ExerciseValidator):
             return True
 
         return False
+
+class PostgresExerciseValidator(DefaultExerciseValidator):
+    """
+    PostgreSQL-specific Exercise Validator.
+    """
+
+    def __init__(self):
+        self.parser = PostgresPlanParser()
+
+    def get_execution_plan(self, sql: str, sandbox: SandboxInterface) -> PlanTree:
+        explain_sql = f"EXPLAIN (FORMAT JSON) {sql}"
+        result = sandbox.execute_query(explain_sql)
+
+        if result.error:
+            raise ValueError(f"PostgreSQL error: {result.error}")
+
+        # The result of EXPLAIN (FORMAT JSON) is typically a single row with one column containing the JSON string
+        if not result.rows or not result.rows[0]:
+            raise ValueError("No execution plan returned from PostgreSQL")
+
+        plan_json = result.rows[0][0]
+        # If it's already a dict/list (psycopg2 sometimes parses JSON automatically), convert it back to string or handle it
+        if not isinstance(plan_json, str):
+            plan_json = json.dumps(plan_json)
+
+        return self.parser.parse(plan_json)
