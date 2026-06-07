@@ -7,9 +7,9 @@
 | Phase 1 | Project Foundation | ✅ |
 | Phase 2 | Infrastructure & CI/CD | ✅ |
 | Phase 3 | Technical Interface Specifications | ✅ |
-| Phase 4 | Database Sandbox Interface (DSI) | ⏳ |
+| Phase 4 | Database Sandbox Interface (DSI) | 🚧 |
 | Phase 5 | Content Management & Lesson Engine | ✅ |
-| Phase 6 | Exercise Validator (EV) | ⏳ |
+| Phase 6 | Exercise Validator (EV) | 🚧 |
 | Phase 7 | Web UI Development | ⏳ |
 | Phase 8 | Content Production | 🚧 |
 
@@ -44,10 +44,10 @@
 - [x] Define Content Repository file structure and YAML schemas ✅
 
 ### Phase 4: Database Sandbox Interface (DSI)
-- [ ] Implement Docker management using Docker SDK for Python ⏳
+- [x] Implement Docker management using Docker SDK for Python ✅ (2025-05-24)
 - [ ] Create pre-configured Docker images for Oracle ⏳
 - [ ] Create pre-configured Docker images for PostgreSQL ⏳
-- [ ] Implement SQL execution and result capture logic ⏳
+- [x] Implement SQL execution and result capture logic ✅ (2025-05-24)
 
 ### Phase 5: Content Management & Lesson Engine
 - [x] Implement `tutorial.engine` for curriculum management ✅ (2024-05-22)
@@ -57,9 +57,9 @@
 
 ### Phase 6: Exercise Validator (EV)
 - [ ] Implement execution plan capture (`EXPLAIN`) for Oracle ⏳
-- [ ] Implement execution plan capture (`EXPLAIN`) for PostgreSQL ⏳
-- [ ] Implement plan tree parsing and comparison logic 🚧 (PostgreSQL parser implemented)
-- [ ] Implement validation feedback generator ⏳
+- [x] Implement execution plan capture (`EXPLAIN`) for PostgreSQL ✅ (2025-05-24)
+- [x] Implement plan tree parsing and comparison logic ✅ (2025-05-24)
+- [x] Implement validation feedback generator ✅ (2025-05-24)
 
 ### Phase 7: Web UI Development
 - [ ] Implement Web-based User Interface ⏳
@@ -146,5 +146,5 @@
   - [x] Lesson: Broadcast Motion (ex_broadcast_motion.svg) ✅ (2026-06-06)
   - [x] Lesson: Redistribute Motion (ex_redistribute_motion.svg) ✅ (2026-06-06)
   - [x] Lesson: Unknown (ex_unknown.svg) ✅ (2026-06-06)
-- [/] Create interactive optimization exercises 🚧 (First PostgreSQL scan lesson migrated)
+- [/] Create interactive optimization exercises 🚧 (PostgreSQL scan lessons implemented)
 - [ ] Conduct knowledge verification test suites ⏳

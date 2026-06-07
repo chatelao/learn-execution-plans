@@ -1,0 +1,7 @@
+expected_constructs:
+  - - operation: "INDEX SCAN"
+    - operation: "INDEX ONLY SCAN"
+forbidden_constructs:
+  - operation: "Seq Scan"
+custom_rules:
+  min_cost: 0
