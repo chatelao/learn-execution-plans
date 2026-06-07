@@ -36,8 +36,8 @@ class PlanTree:
 @dataclass
 class ValidationCriteria:
     """Represents the criteria for validating an exercise submission."""
-    expected_constructs: List[str]
-    forbidden_constructs: List[str] = field(default_factory=list)
+    expected_constructs: List[Any]
+    forbidden_constructs: List[Any] = field(default_factory=list)
     custom_rules: Dict[str, Any] = field(default_factory=dict)
 
 @dataclass
