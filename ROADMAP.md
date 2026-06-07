@@ -45,7 +45,7 @@
 
 ### Phase 4: Database Sandbox Interface (DSI)
 - [x] Implement Docker management using Docker SDK for Python ✅ (2025-05-24)
-- [ ] Create pre-configured Docker images for Oracle ⏳
+- [/] Create pre-configured Docker images for Oracle 🚧 (Implementation skeleton ready)
 - [ ] Create pre-configured Docker images for PostgreSQL ⏳
 - [x] Implement SQL execution and result capture logic ✅ (2025-05-24)
 
@@ -56,7 +56,7 @@
 - [x] Create initial lesson templates ✅ (2024-05-22)
 
 ### Phase 6: Exercise Validator (EV)
-- [ ] Implement execution plan capture (`EXPLAIN`) for Oracle ⏳
+- [x] Implement execution plan capture (`EXPLAIN`) for Oracle ✅ (2025-05-25)
 - [x] Implement execution plan capture (`EXPLAIN`) for PostgreSQL ✅ (2025-05-24)
 - [x] Implement plan tree parsing and comparison logic ✅ (2025-05-24)
 - [x] Implement validation feedback generator ✅ (2025-05-24)
@@ -146,5 +146,5 @@
   - [x] Lesson: Broadcast Motion (ex_broadcast_motion.svg) ✅ (2026-06-06)
   - [x] Lesson: Redistribute Motion (ex_redistribute_motion.svg) ✅ (2026-06-06)
   - [x] Lesson: Unknown (ex_unknown.svg) ✅ (2026-06-06)
-- [/] Create interactive optimization exercises 🚧 (PostgreSQL scan lessons implemented)
+- [/] Create interactive optimization exercises 🚧 (PostgreSQL scan and index only scan exercises implemented)
 - [ ] Conduct knowledge verification test suites ⏳

@@ -132,3 +132,37 @@ def test_postgres_exercise_validator():
     plan = validator.get_execution_plan("SELECT * FROM users", sandbox)
     assert plan.operation == "Seq Scan"
     sandbox.execute_query.assert_called_with("EXPLAIN (FORMAT JSON) SELECT * FROM users")
+
+from tutorial.validator import OracleExerciseValidator, OraclePlanParser
+
+def test_oracle_plan_parser():
+    parser = OraclePlanParser()
+    rows = [
+        {"ID": 0, "PARENT_ID": -1, "OPERATION": "SELECT STATEMENT"},
+        {"ID": 1, "PARENT_ID": 0, "OPERATION": "TABLE ACCESS", "OPTIONS": "FULL", "OBJECT_NAME": "USERS"}
+    ]
+
+    plan = parser.parse(rows)
+    assert plan.operation == "SELECT STATEMENT"
+    assert len(plan.children) == 1
+    assert plan.children[0].operation == "TABLE ACCESS"
+    assert plan.children[0].options["OPTIONS"] == "FULL"
+
+def test_oracle_exercise_validator():
+    validator = OracleExerciseValidator()
+    sandbox = MagicMock(spec=SandboxInterface)
+
+    # Mock EXPLAIN PLAN and PLAN_TABLE retrieval
+    sandbox.execute_query.side_effect = [
+        QueryResult(columns=[], rows=[], execution_time=0.01), # DELETE FROM PLAN_TABLE
+        QueryResult(columns=[], rows=[], execution_time=0.01), # EXPLAIN PLAN FOR ...
+        QueryResult(
+            columns=["ID", "PARENT_ID", "OPERATION", "OPTIONS", "OBJECT_NAME"],
+            rows=[(0, -1, "SELECT STATEMENT", None, None), (1, 0, "TABLE ACCESS", "FULL", "USERS")],
+            execution_time=0.05
+        ) # SELECT FROM PLAN_TABLE
+    ]
+
+    plan = validator.get_execution_plan("SELECT * FROM users", sandbox)
+    assert plan.operation == "SELECT STATEMENT"
+    assert plan.children[0].operation == "TABLE ACCESS"
