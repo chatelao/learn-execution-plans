@@ -39,6 +39,7 @@ class ValidationCriteria:
     expected_constructs: List[Any]
     forbidden_constructs: List[Any] = field(default_factory=list)
     custom_rules: Dict[str, Any] = field(default_factory=dict)
+    db_type: str = "postgres"
 
 @dataclass
 class ValidationResult:

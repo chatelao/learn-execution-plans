@@ -4,9 +4,10 @@ from tutorial.models import PlanTree, ValidationCriteria
 
 class MockValidator(DefaultExerciseValidator):
     def __init__(self, plan_to_return):
+        super().__init__(sandbox=None)
         self.plan_to_return = plan_to_return
 
-    def get_execution_plan(self, sql: str) -> PlanTree:
+    def get_execution_plan(self, sql: str, db_type: str = "postgres") -> PlanTree:
         return self.plan_to_return
 
 def test_validation_success_simple():
