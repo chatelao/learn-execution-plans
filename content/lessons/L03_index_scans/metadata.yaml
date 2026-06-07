@@ -1,0 +1,5 @@
+id: L03_index_scans
+title: "Index Scans in PostgreSQL"
+order: 3
+tags: ["postgres", "scans", "index"]
+prerequisites: ["L02_scans"]

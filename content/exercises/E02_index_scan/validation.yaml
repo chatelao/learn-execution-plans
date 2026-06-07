@@ -1,0 +1,5 @@
+expected_constructs:
+  - operation: "Index Scan"
+    Index Name: "idx_employees_dept"
+forbidden_constructs:
+  - operation: "Seq Scan"
