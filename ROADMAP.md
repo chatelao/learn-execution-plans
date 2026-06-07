@@ -69,6 +69,25 @@
 
 ### Phase 8: Content Production
 - [ ] Produce Oracle execution plan constructs lessons ⏳
+  - [ ] Lesson: Table Access Full ⏳
+  - [ ] Lesson: Index Unique Scan ⏳
+  - [ ] Lesson: Index Range Scan ⏳
+  - [ ] Lesson: Index Full Scan ⏳
+  - [ ] Lesson: Index Fast Full Scan ⏳
+  - [ ] Lesson: Index Skip Scan ⏳
+  - [ ] Lesson: Table Access By Index Rowid ⏳
+  - [ ] Lesson: Nested Loops ⏳
+  - [ ] Lesson: Hash Join ⏳
+  - [ ] Lesson: Merge Join ⏳
+  - [ ] Lesson: Sort Aggregate ⏳
+  - [ ] Lesson: Hash Unique ⏳
+  - [ ] Lesson: View ⏳
+  - [ ] Lesson: Union-All ⏳
+  - [ ] Lesson: Filter ⏳
+  - [ ] Lesson: Bitmap Index Operations ⏳
+  - [ ] Lesson: Partitioning Operations ⏳
+  - [ ] Lesson: Window Functions ⏳
+  - [ ] Lesson: Hierarchical Queries (Connect By) ⏳
 - [x] Produce PostgreSQL execution plan constructs lessons ✅ (2026-06-06)
   - [x] Lesson: Scan (ex_scan.svg) ✅ (2026-06-06)
   - [x] Lesson: Index Scan (ex_index_scan.svg) ✅ (2026-06-06)
