@@ -1,0 +1,5 @@
+expected_constructs:
+  - operation: "TABLE ACCESS"
+    options: "FULL"
+forbidden_constructs: []
+custom_rules: {}
