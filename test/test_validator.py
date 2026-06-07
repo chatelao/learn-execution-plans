@@ -1,13 +1,33 @@
 import pytest
-from tutorial.validator import DefaultExerciseValidator
-from tutorial.models import PlanTree, ValidationCriteria
+from unittest.mock import MagicMock
+from tutorial.validator import DefaultExerciseValidator, PostgresPlanParser
+from tutorial.models import PlanTree, ValidationCriteria, QueryResult
 
 class MockValidator(DefaultExerciseValidator):
     def __init__(self, plan_to_return):
+        # Override init to not require a sandbox for these simple tests
         self.plan_to_return = plan_to_return
 
     def get_execution_plan(self, sql: str) -> PlanTree:
         return self.plan_to_return
+
+def test_validator_get_execution_plan_integration():
+    # Test that DefaultExerciseValidator.get_execution_plan correctly uses the sandbox
+    mock_sandbox = MagicMock()
+    # Mocking EXPLAIN (FORMAT JSON) output
+    pg_json = '[{"Plan": {"Node Type": "Seq Scan", "Relation Name": "users"}}]'
+    mock_sandbox.execute_query.return_value = QueryResult(
+        columns=["QUERY PLAN"],
+        rows=[(pg_json,)],
+        execution_time=0.1
+    )
+
+    validator = DefaultExerciseValidator(mock_sandbox)
+    plan = validator.get_execution_plan("SELECT * FROM users")
+
+    assert plan.operation == "Seq Scan"
+    assert plan.options["Relation Name"] == "users"
+    mock_sandbox.execute_query.assert_called_once_with("EXPLAIN (FORMAT JSON) SELECT * FROM users")
 
 def test_validation_success_simple():
     # Setup a simple plan tree: TABLE ACCESS FULL
