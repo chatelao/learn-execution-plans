@@ -49,14 +49,15 @@ class LessonEngine:
         """Validates a user's exercise submission and updates progress."""
         exercise_data = self.content_repo.get_exercise(exercise_id)
 
-        # In a real implementation, we would parse validation_rules_yaml into ValidationCriteria
-        # For now, this is a skeleton
         import yaml
         rules = yaml.safe_load(exercise_data.validation_rules_yaml)
+        db_type = exercise_data.metadata.get("db_type", "postgres")
+
         criteria = ValidationCriteria(
             expected_constructs=rules.get("expected_constructs", []),
             forbidden_constructs=rules.get("forbidden_constructs", []),
-            custom_rules=rules.get("custom_rules", {})
+            custom_rules=rules.get("custom_rules", {}),
+            db_type=db_type
         )
 
         result = self.validator.validate(user_sql, criteria)

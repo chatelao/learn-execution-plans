@@ -2,6 +2,7 @@ import json
 from abc import ABC, abstractmethod
 from typing import Any, List, Dict, Optional
 from .models import PlanTree, ValidationCriteria, ValidationResult
+from .sandbox import SandboxInterface
 
 class PostgresPlanParser:
     """
@@ -39,11 +40,12 @@ class ExerciseValidator(ABC):
     """
 
     @abstractmethod
-    def get_execution_plan(self, sql: str) -> PlanTree:
+    def get_execution_plan(self, sql: str, db_type: str) -> PlanTree:
         """
         Requests DSI to run EXPLAIN on the SQL and returns a structured plan tree.
 
         :param sql: User-provided SQL statement.
+        :param db_type: Database type ('postgres' or 'oracle').
         :return: A structured PlanTree object.
         """
         pass
@@ -64,13 +66,33 @@ class DefaultExerciseValidator(ExerciseValidator):
     Standard implementation of ExerciseValidator using recursive plan tree comparison.
     """
 
-    def get_execution_plan(self, sql: str) -> PlanTree:
-        # This will be implemented when connected to the Database Sandbox
-        raise NotImplementedError("get_execution_plan depends on a concrete Sandbox implementation.")
+    def __init__(self, sandbox: Optional[SandboxInterface] = None):
+        self.sandbox = sandbox
+        self.pg_parser = PostgresPlanParser()
+
+    def get_execution_plan(self, sql: str, db_type: str = "postgres") -> PlanTree:
+        if not self.sandbox:
+            raise RuntimeError("Validator not connected to a sandbox.")
+
+        if db_type.lower() == "postgres":
+            explain_sql = f"EXPLAIN (FORMAT JSON) {sql}"
+            result = self.sandbox.execute_query(explain_sql)
+            if result.error:
+                raise RuntimeError(f"Error getting execution plan: {result.error}")
+
+            # Postgres JSON output is usually in the first row, first column
+            if result.rows and len(result.rows[0]) > 0:
+                json_plan = result.rows[0][0]
+                if isinstance(json_plan, (dict, list)):
+                    json_plan = json.dumps(json_plan)
+                return self.pg_parser.parse(json_plan)
+            raise ValueError("No execution plan returned by the database.")
+        else:
+            raise NotImplementedError(f"Plan capture for '{db_type}' not supported yet.")
 
     def validate(self, user_sql: str, criteria: ValidationCriteria) -> ValidationResult:
         try:
-            plan_tree = self.get_execution_plan(user_sql)
+            plan_tree = self.get_execution_plan(user_sql, criteria.db_type)
         except Exception as e:
             return ValidationResult(success=False, feedback=f"Failed to capture execution plan: {str(e)}")
 
