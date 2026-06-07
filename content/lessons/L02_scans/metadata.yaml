@@ -1,0 +1,5 @@
+id: L02_scans
+title: "Scans in PostgreSQL"
+order: 2
+tags: ["postgres", "scans"]
+prerequisites: ["L01_intro_to_plans"]

@@ -1,6 +1,36 @@
+import json
 from abc import ABC, abstractmethod
-from typing import Any, List, Dict
+from typing import Any, List, Dict, Optional
 from .models import PlanTree, ValidationCriteria, ValidationResult
+
+class PostgresPlanParser:
+    """
+    Parser for PostgreSQL EXPLAIN (FORMAT JSON) output.
+    """
+
+    def parse(self, json_output: str) -> PlanTree:
+        try:
+            data = json.loads(json_output)
+            # PostgreSQL returns a list of queries; usually we just want the first one
+            if isinstance(data, list) and len(data) > 0:
+                plan_data = data[0].get("Plan", {})
+                return self._parse_node(plan_data)
+            raise ValueError("Invalid PostgreSQL EXPLAIN JSON format")
+        except json.JSONDecodeError as e:
+            raise ValueError(f"Failed to decode JSON output: {str(e)}")
+
+    def _parse_node(self, node_data: Dict[str, Any]) -> PlanTree:
+        operation = node_data.get("Node Type", "UNKNOWN")
+        children = []
+
+        if "Plans" in node_data:
+            for child_data in node_data["Plans"]:
+                children.append(self._parse_node(child_data))
+
+        # Collect all other fields as options
+        options = {k: v for k, v in node_data.items() if k not in ("Node Type", "Plans")}
+
+        return PlanTree(operation=operation, children=children, options=options)
 
 class ExerciseValidator(ABC):
     """
@@ -71,7 +101,11 @@ class DefaultExerciseValidator(ExerciseValidator):
     def _find_construct(self, tree: PlanTree, construct: Any) -> bool:
         """
         Recursively searches the plan tree for a matching construct.
+        If construct is a list, it returns True if ANY item in the list matches (OR logic).
         """
+        if isinstance(construct, list):
+            return any(self._find_construct(tree, c) for c in construct)
+
         if self._matches(tree, construct):
             return True
 

@@ -1,6 +1,7 @@
 expected_constructs:
-  - operation: "TABLE ACCESS"
-    options: "FULL"
+  - - operation: "TABLE ACCESS"
+      type: "FULL"
+    - operation: "Seq Scan"
 forbidden_constructs:
   - operation: "INDEX"
 custom_rules:
