@@ -157,6 +157,51 @@ class DefaultExerciseValidator(ExerciseValidator):
 
         return False
 
+class OraclePlanParser:
+    """
+    Parser for Oracle EXPLAIN PLAN output retrieved from PLAN_TABLE.
+    Expects a list of rows representing the plan steps.
+    """
+
+    def parse(self, rows: List[Dict[str, Any]]) -> PlanTree:
+        if not rows:
+            raise ValueError("No plan data to parse")
+
+        # Build a map of ID -> Node and ID -> Children IDs
+        nodes = {}
+        children_map = {}
+        root_id = None
+
+        for row in rows:
+            node_id = row.get("ID")
+            parent_id = row.get("PARENT_ID")
+            operation = row.get("OPERATION", "UNKNOWN")
+            options = {k: v for k, v in row.items() if k not in ("ID", "PARENT_ID", "OPERATION")}
+
+            node = PlanTree(operation=operation, children=[], options=options)
+            nodes[node_id] = node
+
+            if parent_id is None or parent_id == -1: # Oracle usually uses -1 or NULL for root parent
+                root_id = node_id
+            else:
+                if parent_id not in children_map:
+                    children_map[parent_id] = []
+                children_map[parent_id].append(node_id)
+
+        if root_id is None:
+            # Fallback to the first node if no root is explicitly found
+            root_id = rows[0].get("ID")
+
+        # Recursively assemble the tree
+        return self._assemble_tree(root_id, nodes, children_map)
+
+    def _assemble_tree(self, node_id: int, nodes: Dict[int, PlanTree], children_map: Dict[int, List[int]]) -> PlanTree:
+        node = nodes[node_id]
+        if node_id in children_map:
+            for child_id in sorted(children_map[node_id]):
+                node.children.append(self._assemble_tree(child_id, nodes, children_map))
+        return node
+
 class PostgresExerciseValidator(DefaultExerciseValidator):
     """
     PostgreSQL-specific Exercise Validator.
@@ -182,3 +227,44 @@ class PostgresExerciseValidator(DefaultExerciseValidator):
             plan_json = json.dumps(plan_json)
 
         return self.parser.parse(plan_json)
+
+class OracleExerciseValidator(DefaultExerciseValidator):
+    """
+    Oracle-specific Exercise Validator.
+    """
+
+    def __init__(self):
+        self.parser = OraclePlanParser()
+
+    def get_execution_plan(self, sql: str, sandbox: SandboxInterface) -> PlanTree:
+        # 1. Clear PLAN_TABLE for the current session (optional but good practice)
+        sandbox.execute_query("DELETE FROM PLAN_TABLE")
+
+        # 2. Run EXPLAIN PLAN
+        explain_sql = f"EXPLAIN PLAN FOR {sql}"
+        result = sandbox.execute_query(explain_sql)
+        if result.error:
+            raise ValueError(f"Oracle EXPLAIN PLAN error: {result.error}")
+
+        # 3. Retrieve plan from PLAN_TABLE
+        query = "SELECT id, parent_id, operation, options, object_name FROM PLAN_TABLE ORDER BY id"
+        plan_result = sandbox.execute_query(query)
+
+        if plan_result.error:
+            raise ValueError(f"Failed to retrieve plan from PLAN_TABLE: {plan_result.error}")
+
+        if not plan_result.rows:
+            raise ValueError("No execution plan returned from Oracle")
+
+        # Convert rows to list of dicts for the parser
+        rows = []
+        for r in plan_result.rows:
+            rows.append({
+                "ID": r[0],
+                "PARENT_ID": r[1],
+                "OPERATION": r[2],
+                "OPTIONS": r[3],
+                "OBJECT_NAME": r[4]
+            })
+
+        return self.parser.parse(rows)
