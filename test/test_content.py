@@ -23,6 +23,24 @@ def test_get_exercise():
     assert "expected_constructs" in exercise.validation_rules_yaml
     assert exercise.metadata["difficulty"] == "beginner"
 
+def test_get_hash_join_exercise():
+    repo = FileSystemContentRepository(base_path="content")
+    exercise = repo.get_exercise("E05_hash_join")
+
+    assert exercise.exercise_id == "E05_hash_join"
+    assert exercise.title == "Hash Join Exercise"
+    assert "CREATE TABLE suppliers" in exercise.setup_sql
+    assert "HASH JOIN" in exercise.validation_rules_yaml
+
+def test_get_merge_join_exercise():
+    repo = FileSystemContentRepository(base_path="content")
+    exercise = repo.get_exercise("E06_merge_join")
+
+    assert exercise.exercise_id == "E06_merge_join"
+    assert exercise.title == "Merge Join Exercise"
+    assert "CREATE TABLE orders" in exercise.setup_sql
+    assert "MERGE JOIN" in exercise.validation_rules_yaml
+
 def test_missing_lesson():
     repo = FileSystemContentRepository(base_path="content")
     with pytest.raises(FileNotFoundError):

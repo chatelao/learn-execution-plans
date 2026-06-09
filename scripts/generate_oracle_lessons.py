@@ -28,23 +28,28 @@ def generate_lessons():
     output_dir = "docs/source/oracle_lessons"
     os.makedirs(output_dir, exist_ok=True)
 
+    if not os.path.exists(roadmap_path):
+        print(f"Roadmap file not found: {roadmap_path}")
+        return
+
     with open(roadmap_path, 'r') as f:
         content = f.read()
 
-    # Extract Oracle lessons section
-    oracle_section_match = re.search(r"Produce Oracle execution plan constructs lessons [⏳✅](.*?)(?=- \[x\] Produce PostgreSQL)", content, re.DOTALL)
+    # Extract Oracle lessons section - more robust regex
+    oracle_section_match = re.search(r"Produce Oracle execution plan constructs lessons.*?\n(.*?)(?=\n- \[x\] Produce PostgreSQL)", content, re.DOTALL)
     if not oracle_section_match:
         print("Could not find Oracle lessons section in ROADMAP.md")
         return
 
     oracle_section = oracle_section_match.group(1)
-    # Looking for lessons with status ⏳ or 🚧
-    lessons = re.findall(r"- \[ \] Lesson: (.*?) [⏳🚧]", oracle_section)
+    # Looking for lessons regardless of their status, we'll filter by to_generate
+    lessons = re.findall(r"- \[.\] Lesson: (.*?) [⏳✅🚧]", oracle_section)
 
-    # We only want to generate the first few for now as per the plan
-    to_generate = ["Table Access Full", "Index Unique Scan", "Index Range Scan"]
+    # Lessons we want to ensure are generated
+    to_generate = ["Table Access Full", "Index Unique Scan", "Index Range Scan", "Index Full Scan", "Index Fast Full Scan"]
 
     for title in lessons:
+        title = title.strip()
         if title not in to_generate:
             continue
 
