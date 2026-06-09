@@ -83,7 +83,7 @@ class DefaultExerciseValidator(ExerciseValidator):
             if self._find_construct(plan_tree, forbidden):
                 return ValidationResult(
                     success=False,
-                    feedback=f"Forbidden construct found: {forbidden}",
+                    feedback=f"Forbidden construct found: {self._format_construct(forbidden)}",
                     plan_tree=plan_tree
                 )
 
@@ -91,7 +91,7 @@ class DefaultExerciseValidator(ExerciseValidator):
         missing = []
         for expected in criteria.expected_constructs:
             if not self._find_construct(plan_tree, expected):
-                missing.append(str(expected))
+                missing.append(self._format_construct(expected))
 
         if missing:
             return ValidationResult(
@@ -101,6 +101,28 @@ class DefaultExerciseValidator(ExerciseValidator):
             )
 
         return ValidationResult(success=True, feedback="Exercise validated successfully!", plan_tree=plan_tree)
+
+    def _format_construct(self, construct: Any) -> str:
+        """
+        Generates a human-readable string representation of a validation construct.
+        """
+        if isinstance(construct, str):
+            return construct
+
+        if isinstance(construct, list):
+            parts = [self._format_construct(c) for c in construct]
+            return f"({' or '.join(parts)})"
+
+        if isinstance(construct, dict):
+            if "operation" in construct:
+                op = construct["operation"]
+                opts = [f"{k}={v}" for k, v in construct.items() if k != "operation"]
+                if opts:
+                    return f"{op} ({', '.join(opts)})"
+                return op
+            return str(construct)
+
+        return str(construct)
 
     def _find_construct(self, tree: PlanTree, construct: Any) -> bool:
         """
