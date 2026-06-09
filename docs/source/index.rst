@@ -9,6 +9,7 @@ Welcome to the Execution Plan Mastery Tutorial documentation.
    :glob:
 
    postgres_lessons/*
+   oracle_lessons/*
 
 Indices and tables
 ==================
