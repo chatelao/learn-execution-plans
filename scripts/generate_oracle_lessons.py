@@ -46,7 +46,18 @@ def generate_lessons():
     lessons = re.findall(r"- \[.\] Lesson: (.*?) [⏳✅🚧]", oracle_section)
 
     # Lessons we want to ensure are generated
-    to_generate = ["Table Access Full", "Index Unique Scan", "Index Range Scan", "Index Full Scan", "Index Fast Full Scan"]
+    to_generate = [
+        "Table Access Full",
+        "Index Unique Scan",
+        "Index Range Scan",
+        "Index Full Scan",
+        "Index Fast Full Scan",
+        "Index Skip Scan",
+        "Table Access By Index Rowid",
+        "Nested Loops",
+        "Hash Join",
+        "Merge Join"
+    ]
 
     for title in lessons:
         title = title.strip()

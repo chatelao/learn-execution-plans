@@ -74,11 +74,11 @@
   - [x] Lesson: Index Range Scan ✅ (2026-06-09)
   - [x] Lesson: Index Full Scan ✅ (2026-06-10)
   - [x] Lesson: Index Fast Full Scan ✅ (2026-06-10)
-  - [ ] Lesson: Index Skip Scan ⏳
-  - [ ] Lesson: Table Access By Index Rowid ⏳
-  - [ ] Lesson: Nested Loops ⏳
-  - [ ] Lesson: Hash Join ⏳
-  - [ ] Lesson: Merge Join ⏳
+  - [x] Lesson: Index Skip Scan ✅ (2026-06-10)
+  - [x] Lesson: Table Access By Index Rowid ✅ (2026-06-10)
+  - [x] Lesson: Nested Loops ✅ (2026-06-10)
+  - [x] Lesson: Hash Join ✅ (2026-06-10)
+  - [x] Lesson: Merge Join ✅ (2026-06-10)
   - [ ] Lesson: Sort Aggregate ⏳
   - [ ] Lesson: Hash Unique ⏳
   - [ ] Lesson: View ⏳
