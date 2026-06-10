@@ -1,0 +1,10 @@
+expected_constructs:
+  - - operation: "MERGE JOIN"
+    - operation: "Merge Join"
+forbidden_constructs:
+  - operation: "HASH JOIN"
+  - operation: "Hash Join"
+  - operation: "NESTED LOOPS"
+  - operation: "Nested Loop"
+custom_rules:
+  min_cost: 0

@@ -72,8 +72,8 @@
   - [x] Lesson: Table Access Full ✅ (2026-06-09)
   - [x] Lesson: Index Unique Scan ✅ (2026-06-09)
   - [x] Lesson: Index Range Scan ✅ (2026-06-09)
-  - [ ] Lesson: Index Full Scan ⏳
-  - [ ] Lesson: Index Fast Full Scan ⏳
+  - [x] Lesson: Index Full Scan ✅ (2026-06-10)
+  - [x] Lesson: Index Fast Full Scan ✅ (2026-06-10)
   - [ ] Lesson: Index Skip Scan ⏳
   - [ ] Lesson: Table Access By Index Rowid ⏳
   - [ ] Lesson: Nested Loops ⏳
@@ -146,5 +146,5 @@
   - [x] Lesson: Broadcast Motion (ex_broadcast_motion.svg) ✅ (2026-06-06)
   - [x] Lesson: Redistribute Motion (ex_redistribute_motion.svg) ✅ (2026-06-06)
   - [x] Lesson: Unknown (ex_unknown.svg) ✅ (2026-06-06)
-- [/] Create interactive optimization exercises 🚧 (PostgreSQL scan and join exercises implemented)
+- [/] Create interactive optimization exercises 🚧 (PostgreSQL scan and join exercises implemented, including Hash and Merge joins)
 - [ ] Conduct knowledge verification test suites ⏳
